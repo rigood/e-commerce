@@ -2,6 +2,7 @@ import { useState } from "react";
 import styled from "styled-components";
 import { ArrowLeftOutlined, ArrowRightOutlined } from "@mui/icons-material";
 import { sliderItems } from "../data";
+import { mobile } from "../responsive";
 
 function Slider() {
   const [slideIndex, setSlideIndex] = useState(0);
@@ -48,6 +49,7 @@ const Container = styled.div`
   // flex일 때는 Wrapper의 width가 3840px, flex 속성 없앴을 땐 1903px
   position: relative; // Arrow 배치
   overflow: hidden; // Slide가 일렬 배치된 Wrapper 넘치는 부분 자르기
+  ${mobile({ display: "none" })}
 `;
 
 const Arrow = styled.div`
